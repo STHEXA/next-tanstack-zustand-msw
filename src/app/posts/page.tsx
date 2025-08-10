@@ -1,8 +1,10 @@
+import Image from "next/image";
 import Link from "next/link";
 
 type PostsData = {
   id: string;
   title: string;
+  image: string;
 };
 
 export default async function PostsPage() {
@@ -22,12 +24,21 @@ export default async function PostsPage() {
   }
 
   return (
-    <ul>
-      {posts.map((p) => (
-        <li key={p.id}>
-          <Link href={`/posts/${p.id}`}>{p.title}</Link>
-        </li>
-      ))}
-    </ul>
+    <div>
+      <ul className="flex flex-wrap gap-3 w-[1000px] mx-auto">
+        {posts.map((p) => (
+          <li key={p.id}>
+            <Link href={`/posts/${p.id}`}>
+              <div className="rounded-2xl overflow-hidden">
+                <div>
+                  <Image src={p.image} alt="" width={200} height={300} />
+                </div>
+                <p className="bg-white text-zinc-600 p-3">{p.title}</p>
+              </div>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
