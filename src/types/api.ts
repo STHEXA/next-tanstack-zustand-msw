@@ -3,3 +3,9 @@ export type PostDetail = {
   title: string;
   body: string;
 };
+
+export type PostsData = {
+  id: string;
+  title: string;
+  image: string;
+};

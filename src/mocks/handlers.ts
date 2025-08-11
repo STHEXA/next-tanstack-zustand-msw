@@ -1,4 +1,4 @@
-import { http, HttpResponse } from "msw";
+import { delay, http, HttpResponse } from "msw";
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
 
@@ -18,6 +18,62 @@ export const handlers = [
         id: "10",
         title: "投稿10",
         image: "https://picsum.photos/id/100/200/300",
+      },
+    ]);
+  }),
+
+  http.get(`${baseUrl}/api/posts/add`, async () => {
+    await delay(1000);
+    return HttpResponse.json([
+      {
+        id: "11",
+        title: "投稿11",
+        image: "https://picsum.photos/id/111/200/300",
+      },
+      {
+        id: "12",
+        title: "投稿12",
+        image: "https://picsum.photos/id/221/200/300",
+      },
+      {
+        id: "13",
+        title: "投稿13",
+        image: "https://picsum.photos/id/331/200/300",
+      },
+      {
+        id: "14",
+        title: "投稿14",
+        image: "https://picsum.photos/id/441/200/300",
+      },
+      {
+        id: "15",
+        title: "投稿15",
+        image: "https://picsum.photos/id/551/200/300",
+      },
+      {
+        id: "16",
+        title: "投稿16",
+        image: "https://picsum.photos/id/661/200/300",
+      },
+      {
+        id: "17",
+        title: "投稿17",
+        image: "https://picsum.photos/id/770/200/300",
+      },
+      {
+        id: "18",
+        title: "投稿18",
+        image: "https://picsum.photos/id/881/200/300",
+      },
+      {
+        id: "19",
+        title: "投稿19",
+        image: "https://picsum.photos/id/991/200/300",
+      },
+      {
+        id: "20",
+        title: "投稿20",
+        image: "https://picsum.photos/id/101/200/300",
       },
     ]);
   }),
