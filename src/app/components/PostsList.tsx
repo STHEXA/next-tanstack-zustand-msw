@@ -57,9 +57,11 @@ export default function PostsList({ initialPosts }: PostsListProps) {
           ))}
         </ul>
       )}
-      <div className="text-center m-[20px]">
-        <button onClick={addPosts}>もっと表示</button>
-      </div>
+      {posts.length <= 10 && (
+        <div className="text-center m-[20px]">
+          <button onClick={addPosts}>もっと表示</button>
+        </div>
+      )}
     </div>
   );
 }
