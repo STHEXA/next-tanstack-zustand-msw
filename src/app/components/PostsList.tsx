@@ -44,7 +44,10 @@ export default function PostsList({ initialPosts }: PostsListProps) {
       ) : (
         <ul className="flex flex-wrap gap-3 w-[1048px] mx-auto">
           {posts.map((p) => (
-            <li key={p.id}>
+            <li
+              key={p.id}
+              className="hover:scale-125 transition-all ease-in-out"
+            >
               <Link href={`/posts/${p.id}`}>
                 <div className="rounded-2xl overflow-hidden">
                   <div>
